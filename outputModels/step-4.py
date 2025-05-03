@@ -1,13 +1,13 @@
 import os
 import shutil
 
-# Absolute base path (adjust if needed)
-base_path = r"F:\Projects\Python\HSE\Year_project"
+# Get the project root directory (where the script is located)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Source and destination paths
-source_dir = os.path.join(base_path, "outputModels/res")  # Files are in /res, not /outputModels/res
-dest_processed = os.path.join(base_path, "createGraphics", "LoadHeight", "modelsLoadHeight")
-dest_deformation = os.path.join(base_path, "createGraphics", "StressStrain", "modelsStressStrain")
+# Source and destination paths (using relative paths from project root)
+source_dir = os.path.join(project_root, "outputModels", "res")
+dest_processed = os.path.join(project_root, "createGraphics", "LoadHeight", "modelsLoadHeight")
+dest_deformation = os.path.join(project_root, "createGraphics", "StressStrain", "modelsStressStrain")
 
 # Create destination folders if they don't exist
 os.makedirs(dest_processed, exist_ok=True)
